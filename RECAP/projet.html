@@ -41,6 +41,7 @@
 <script>
     //création de la variable pour stocker les dépenses
     let depenses = [];
+
      //création de la fonction pour ajouter les dépenses
     function ajouterDepense() {
     const description = document.getElementById('description').value; //getelementid permet de recuperer id 'descriptiion' dans le form
@@ -62,13 +63,13 @@
 depenses.push(nouvelleDepense); //ajouter nouvelledepense dans la variable/tableau depenses
 
 
-    // afficher
-    afficherDepenses();
-
     // vider les champs
     document.getElementById("description").value = "";
     document.getElementById("montant").value = "";
 } 
+
+    // afficher
+    afficherDepenses();
 
 //création de la fonction pour afficher les dépenses
 function afficherDepenses() {
