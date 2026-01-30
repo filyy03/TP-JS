@@ -39,7 +39,7 @@
 
 <!-- javascrpit -->
 <script>
-    //création de la variable pour les dépenses
+    //création de la variable pour stocker les dépenses
     let depenses = [];
      //création de la fonction pour ajouter les dépenses
     function ajouterDepense() {
@@ -47,11 +47,19 @@
     const montant = document.getElementById('montant').value; //getelementid permet de recuperer id 'montant'dans le form 
     }   
 
-    // constante pour grouper les deux elements correspondants aux depenses
+    // objet pour grouper les deux elements qui compose la depense
     const nouvelleDepense = { 
         description: description,
         montant: Number(montant)
     };
+
+depenses.push(nouvelleDepense); //ajouter nouvelledepense dans la variable/tableau depenses
+
+//création de la fonction pour afficher les dépenses
+function afficherDepenses() {
+    const tableauBody = document.getElementById('tableau-depenses');
+    tableauBody.innerHTML = '';
+}
 
 </script>
 
