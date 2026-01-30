@@ -1,0 +1,52 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    display: block; /* flex sur un input n'a pas de sens */
+    width: fit-content;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #ccc; /* bordure grise */
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+ button{
+    padding: 0.3rem 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    border: 2px solid;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover{
+    background-color: #383838;
+    color: #ffffff;
+}
+
+table{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+
