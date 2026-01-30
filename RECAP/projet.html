@@ -45,7 +45,13 @@
     function ajouterDepense() {
     const description = document.getElementById('description').value; //getelementid permet de recuperer id 'descriptiion' dans le form
     const montant = document.getElementById('montant').value; //getelementid permet de recuperer id 'montant'dans le form 
-}
+    }   
+
+    // constante pour grouper les deux elements correspondants aux depenses
+    const nouvelleDepense = { 
+        description: description,
+        montant: Number(montant)
+    };
 
 </script>
 
