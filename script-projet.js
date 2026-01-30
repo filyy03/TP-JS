@@ -56,7 +56,7 @@ function afficherDepenses() {
 }
 
 function calculerTotal() {
-    const total = 0;
+    let total = 0;
 
     for (let i = 0; i < depenses.length; i++) {
         total += depenses[i].montant;
