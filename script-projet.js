@@ -6,15 +6,15 @@ document.getElementById("submit")
     .addEventListener("click", ajouterDepense);
 
 function ajouterDepense() {
-    let description = document.getElementById("description").value;
-    let montant = document.getElementById("montant").value;
+    const description = document.getElementById("description").value;
+    const montant = document.getElementById("montant").value;
 
     if (description === "" || montant === "") {
         alert("Remplis tous les champs");
         return;
     }
 
-    let depense = {
+    const depense = {
         description: description,
         montant: Number(montant)
     };
@@ -29,7 +29,7 @@ function ajouterDepense() {
 }
 
 function afficherDepenses() {
-    let tableau = document.getElementById("tableau-depenses");
+    const tableau = document.getElementById("tableau-depenses");
     tableau.innerHTML = "";
 
     for (let i = 0; i < depenses.length; i++) {
@@ -43,7 +43,7 @@ function afficherDepenses() {
             supprimerDepense(i);
         });
 
-        let tdAction = document.createElement("td");
+        const tdAction = document.createElement("td");
         tdAction.appendChild(btnSupprimer);
 
         ligne.innerHTML =
@@ -56,7 +56,7 @@ function afficherDepenses() {
 }
 
 function calculerTotal() {
-    let total = 0;
+    const total = 0;
 
     for (let i = 0; i < depenses.length; i++) {
         total += depenses[i].montant;
