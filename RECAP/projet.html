@@ -45,7 +45,13 @@
     function ajouterDepense() {
     const description = document.getElementById('description').value; //getelementid permet de recuperer id 'descriptiion' dans le form
     const montant = document.getElementById('montant').value; //getelementid permet de recuperer id 'montant'dans le form 
-    }   
+      
+
+     // vérifier si les champs sont remplis
+    if (description === "" || montant === "") {
+        alert("Remplis tous les champs");
+        return;
+    }
 
     // objet pour grouper les deux elements qui compose la depense
     const nouvelleDepense = { 
@@ -54,6 +60,15 @@
     };
 
 depenses.push(nouvelleDepense); //ajouter nouvelledepense dans la variable/tableau depenses
+
+
+    // afficher
+    afficherDepenses();
+
+    // vider les champs
+    document.getElementById("description").value = "";
+    document.getElementById("montant").value = "";
+} 
 
 //création de la fonction pour afficher les dépenses
 function afficherDepenses() {
