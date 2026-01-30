@@ -1,33 +1,37 @@
  let depenses = [];
 
-// bouton Ajouter
+// bouton ajouter qaund le bouton est cliquer on lance ajouterdepense
 document.getElementById("submit")
     .addEventListener("click", ajouterDepense);
-// Fonction dépense
-function ajouterDepense() {
- //Récuperation des valeur entrer
-    const description = document.getElementById("description").value;
-    const montant = document.getElementById("montant").value;
 
+// fonction pour ajouter une dépense
+function ajouterDepense() {
+    // récuperation des valeurs entrées
+    const description = document.getElementById("description").value; // on recupere l'id description du form
+    const montant = document.getElementById("montant").value;// on recupere l'id montant du form
+
+    //force le remplissage des champs
     if (description === "" || montant === "") {
         alert("Remplis tous les champs");
         return;
     }
-// on crée les dépenses
+// on crée les dépenses via la constante contenant un objet des deux éléments qui constituent une depense
     const depense = {
         description: description,
         montant: Number(montant)
     };
-// ajout dans le tableau dans dépense
+
+// ajout dans le tableau
     depenses.push(depense);
 
     afficherDepenses();
     calculerTotal();
 
+    // remet description et montant vide dans le tableau
     document.getElementById("description").value = "";
     document.getElementById("montant").value = "";
 }
-// afficher le tableau 
+// fonction pour afficher les dépenses dans le tableau 
 function afficherDepenses() {
     const tableau = document.getElementById("tableau-depenses");
     tableau.innerHTML = "";
@@ -45,7 +49,8 @@ function afficherDepenses() {
 // ici on vient  créez une case (td) pour le bouton
         const tdAction = document.createElement("td");
         tdAction.appendChild(btnSupprimer);
-// On remplit la ligne avec les infos donner dans le formulaire
+
+// on remplit la ligne avec les infos données dans le formulaire
         ligne.innerHTML =
             "<td>" + depenses[i].description + "</td>" +
             "<td>" + depenses[i].montant + " €</td>";
@@ -59,18 +64,18 @@ function afficherDepenses() {
 function calculerTotal() {
     let total = 0;
 
-    for (let i = 0; i < depenses.length; i++) { // la boucle  parcourt toutes les dépenses
+    for (let i = 0; i < depenses.length; i++) { // la boucle parcourt toutes les dépenses
 total += depenses[i].montant; // on ajoute le montant de la dépense actuelle à total
 }
+
 // on affiche le total dans le div avec l'id "total"
-// innerText met le texte visible, ici "Total : [valeur] €"
     document.getElementById("total").innerText =
         "Total : " + total + " €";
 }
 
 function supprimerDepense(index) { 
-    depenses.splice(index, 1);// supprime 1 élément à la position 'index' dans le tableau depense
+    depenses.splice(index, 1);// on supprime 1 élément à la position 'index' dans le tableau depense
  
-    afficherDepenses();// ça met à jour le tableau affiché pour refléter la suppression
+    afficherDepenses();// ça met à jour le tableau affiché pour afficher la suppression
     calculerTotal();//  recalcule le total après suppression pour qu'il soit correct
 }
