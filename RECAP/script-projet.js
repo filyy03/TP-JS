@@ -1,11 +1,11 @@
-
  let depenses = [];
 
 // bouton Ajouter
 document.getElementById("submit")
     .addEventListener("click", ajouterDepense);
-
+// Fonction dépense
 function ajouterDepense() {
+ //Récuperation des valeur entrer
     const description = document.getElementById("description").value;
     const montant = document.getElementById("montant").value;
 
@@ -13,12 +13,12 @@ function ajouterDepense() {
         alert("Remplis tous les champs");
         return;
     }
-
+// on crée les dépenses
     const depense = {
         description: description,
         montant: Number(montant)
     };
-
+// ajout dans le tableau dans dépense
     depenses.push(depense);
 
     afficherDepenses();
@@ -27,14 +27,14 @@ function ajouterDepense() {
     document.getElementById("description").value = "";
     document.getElementById("montant").value = "";
 }
-
+// afficher le tableau 
 function afficherDepenses() {
     const tableau = document.getElementById("tableau-depenses");
     tableau.innerHTML = "";
 
     for (let i = 0; i < depenses.length; i++) {
         let ligne = document.createElement("tr");
-
+//création du bouton supprimer 
         let btnSupprimer = document.createElement("button");
         btnSupprimer.innerText = "Supprimer";
 
